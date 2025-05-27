@@ -8,14 +8,12 @@
             items="{ path: '/Products', 
                      sorter: { path: 'ProductName' }, 
                      filters: [ { path: 'Discontinued', operator: 'EQ', value1: false } ] 
-                    }">
-                    
+                    }">  
             <headerToolbar >
                 <Toolbar id="titleToolbar">
                     <Title id="productTitle" text="{i18n>productListTitle}" />
                 </Toolbar>
             </headerToolbar>
-
             <columns>
                 <Column id="colProductName">
                     <Text id="lblProductName" text="{i18n>columnProduct}" />
@@ -27,7 +25,6 @@
                     <Text id="lblUnitPrice" text="{i18n>columnPrice}" />
                 </Column>
             </columns>
-
             <items>
                 <ColumnListItem id="productListItem">
                     <cells>
