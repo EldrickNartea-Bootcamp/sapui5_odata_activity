@@ -1,0 +1,43 @@
+<mvc:View 
+    controllerName="sapips.training.odata.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <Page id="page" title="{i18n>title}">
+        <Table id="productsTable" 
+            items="{ path: '/Products', 
+                     sorter: { path: 'ProductName' }, 
+                     filters: [ { path: 'Discontinued', operator: 'EQ', value1: false } ] 
+                    }">
+                    
+            <headerToolbar >
+                <Toolbar id="titleToolbar">
+                    <Title id="productTitle" text="{i18n>productListTitle}" />
+                </Toolbar>
+            </headerToolbar>
+
+            <columns>
+                <Column id="colProductName">
+                    <Text id="lblProductName" text="{i18n>columnProduct}" />
+                </Column>
+                <Column id="colSupplierID">
+                    <Text id="lblSupplierID" text="{i18n>columnSupplierID}" />
+                </Column>
+                <Column id="colUnitPrice">
+                    <Text id="lblUnitPrice" text="{i18n>columnPrice}" />
+                </Column>
+            </columns>
+
+            <items>
+                <ColumnListItem id="productListItem">
+                    <cells>
+                        <ObjectIdentifier id="objProduct" title="{ProductName}" text="ID: {ProductID}" />
+                        <Text id="txtSupplierID" text="{SupplierID}" />
+                        <ObjectIdentifier id="objPrice" title="{UnitPrice}" text="{QuantityPerUnit}" />
+                    </cells>
+                </ColumnListItem>
+            </items>
+
+        </Table>
+    </Page>
+</mvc:View>
